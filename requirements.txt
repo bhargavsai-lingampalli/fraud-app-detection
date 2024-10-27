@@ -1,0 +1,8 @@
+emoji~=2.12.1
+google-play-scraper~=1.2.7
+nltk~=3.8.1
+numpy~=1.26.4
+sumy~=0.11.0
+textblob~=0.18.0.post0
+google-generativeai~=0.7.2
+streamlit~=1.39.0
