@@ -8,7 +8,7 @@ def model_prediction(appid, n=1000):
 
 # Sidebar
 st.sidebar.title("Dashboard")
-app_mode = st.sidebar.selectbox("Select Page", ["Home", "About", "Fraud App Detection"])
+app_mode = st.sidebar.selectbox("Select Page", ["Fraud App Detection", "Home", "About"])
 
 # Main Page
 if app_mode == "Home":
