@@ -68,7 +68,7 @@ elif app_mode == "About":
 # Prediction Page
 elif app_mode == "Fraud App Detection":
     st.header("Fraud App Detection")
-    test_text = st.text_input("Enter: ", "")
+    test_text = st.text_input("Enter App Link: ", "")
 
     # Predict button
     if st.button("Predict"):
@@ -77,6 +77,6 @@ elif app_mode == "Fraud App Detection":
             st.write("Our Prediction")
             result = model_prediction(test_text)
             # Reading Labels
-            st.success(f"Model is Predicting it's {result[0]}\n\n{result[1]}")
+            st.success(f"Analysis suggests it's {result[0]}\n\n{result[1]}")
         except Exception as e:
             st.success("Invalid Link!")
