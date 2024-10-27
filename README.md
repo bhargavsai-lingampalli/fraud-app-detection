@@ -24,6 +24,7 @@ Check out the live demo of the project here: [Fraud Detection App](https://proje
 - **fraud_detection.py**: Implements the machine learning model for fraud detection.
 - **summarizer.py**: Handles summarization of user reviews using NLP techniques.
 - **project.py**: Integrates all components and serves as the main script.
+- **ai_summary.py**: Uses Gemini AI to summarize the user reviews.
 - **requirements.txt**: Specifies the dependencies for the project.
 
 ## Installation
