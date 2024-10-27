@@ -1,9 +1,6 @@
 
 # Fraud Detection and Sentiment Analysis for Mobile Applications
 
-
-## Project
-
 ## Project Overview
 
 This project focuses on detecting fraudulent mobile applications. It incorporates Natural Language Processing (NLP) for sentiment analysis of user feedback to identify potential fraud. The system is built to scrape data from Google Play Store, analyze user reviews, and apply both fraud detection algorithms and sentiment analysis to flag suspicious apps.
