@@ -5,6 +5,13 @@ import fraud_detection
 def model_prediction(appid, n=1000):
     return fraud_detection.predict(appid, n)
 
+st.set_page_config(
+    page_title="Fraud App Detection",  # Title shown on the browser tab
+    page_icon="🔍",                   # Emoji or path to an icon file
+    layout="centered",                 # Can be "centered" or "wide"
+    initial_sidebar_state="expanded"   # Can be "expanded", "collapsed", or "auto"
+)
+
 
 # Sidebar
 st.sidebar.title("Dashboard")
