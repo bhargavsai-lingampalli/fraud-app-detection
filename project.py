@@ -8,10 +8,20 @@ def model_prediction(appid, n=1000):
 st.set_page_config(
     page_title="Fraud App Detection",  # Title shown on the browser tab
     page_icon="🔍",                   # Emoji or path to an icon file
-    layout="centered",                 # Can be "centered" or "wide"
+    layout="wide",                 # Can be "centered" or "wide"
     initial_sidebar_state="expanded"   # Can be "expanded", "collapsed", or "auto"
 )
 
+st.markdown(
+    """
+    <style>
+    body {
+        font-family: 'Courier New', monospace;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Sidebar
 st.sidebar.title("Dashboard")
