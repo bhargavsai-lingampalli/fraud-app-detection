@@ -75,6 +75,6 @@ elif app_mode == "Fraud App Detection":
             try:
                 st.write("Our Prediction")
                 result = model_prediction(test_text, review_count)
-                st.success(f"Analysis suggests it's {result[0]}\n\n{result[1]}")
+                st.success(f"Analysis suggests it's ** {result[0]} **\n\n{result[1]}")
             except Exception as e:
                 st.success("Invalid Link!")
