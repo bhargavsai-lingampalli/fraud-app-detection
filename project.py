@@ -69,14 +69,12 @@ elif app_mode == "About":
 elif app_mode == "Fraud App Detection":
     st.header("Fraud App Detection")
     test_text = st.text_input("Enter App Link: ", placeholder="e.g., https://play.google.com/store/apps/details?id=com.example.app")
-
-    # Predict button
+    review_count = st.slider("Select the number of reviews to analyze:", min_value=500, max_value=5000, value=1000)
     if st.button("Predict"):
-        try:
-            st.spinner("Analyzing... please wait!")
-            st.write("Our Prediction")
-            result = model_prediction(test_text)
-            # Reading Labels
-            st.success(f"Analysis suggests it's {result[0]}\n\n{result[1]}")
-        except Exception as e:
-            st.success("Invalid Link!")
+        with st.spinner("Analyzing... please wait!"):
+            try:
+                st.write("Our Prediction")
+                result = model_prediction(test_text, review_count)
+                st.success(f"Analysis suggests it's {result[0]}\n\n{result[1]}")
+            except Exception as e:
+                st.success("Invalid Link!")
