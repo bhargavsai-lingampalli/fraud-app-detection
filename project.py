@@ -15,7 +15,13 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+    /* Apply monospace font to the entire body */
     body {
+        font-family: 'Courier New', monospace;
+    }
+    
+    /* Apply monospace font to various Streamlit text elements */
+    h1, h2, h3, h4, h5, h6, p, li, div {
         font-family: 'Courier New', monospace;
     }
     </style>
