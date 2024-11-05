@@ -1,8 +1,8 @@
 from google_play_scraper import reviews, app
-from textblob import TextBlob
 from summarizer import summarize
 import sqlite3
 import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
 
 
 def predict(app_id, n=1000):
@@ -13,8 +13,10 @@ def predict(app_id, n=1000):
 
     try:
         nltk.data.find('tokenizers/punkt')
+        nltk.data.find('sentiment/vader_lexicon.zip')
     except LookupError:
         nltk.download('punkt')
+        nltk.download('vader_lexicon')
     finally:
         cur.execute("create table if not exists app(appid, fraudulent, review);")
 
@@ -42,19 +44,19 @@ def predict(app_id, n=1000):
         con.close()
         return ["Recently Created Application", res]
 
-    s = 0
+    score = 0
     content = []
-    # print(user_reviews)
+    sia = SentimentIntensityAnalyzer()
     for review in user_reviews[0]:
         text = review['content']
         if text is not None:
-            pol = TextBlob(text).sentiment.polarity
-            s += pol
+            pol = sia.polarity_scores(text)
+            score += pol['compound']
 
-            if pol < 0:
+            if pol['compound'] < 0:
                 content.append(text)
 
-    if s / n >= 0:
+    if score / n >= 0:
         result = app(
             app_id=app_id,
             lang='en',  # defaults to 'en'
