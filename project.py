@@ -68,12 +68,12 @@ elif app_mode == "About":
 # Prediction Page
 elif app_mode == "Fraud App Detection":
     st.header("Fraud App Detection")
-    test_text = st.text_input("Enter App Link: ", "")
+    test_text = st.text_input("Enter App Link: ", placeholder="e.g., https://play.google.com/store/apps/details?id=com.example.app")
 
     # Predict button
     if st.button("Predict"):
         try:
-            st.snow()
+            st.spinner("Analyzing... please wait!")
             st.write("Our Prediction")
             result = model_prediction(test_text)
             # Reading Labels
